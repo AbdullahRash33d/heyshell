@@ -1,5 +1,4 @@
-import signal
-import logging
+import signal, os, logging
 from gevent import spawn
 from gevent import socket
 from gevent import joinall
@@ -456,5 +455,6 @@ if __name__ == '__main__':
     ngrok.set_auth_token(token="2DtKzA4TEtvkDeILmzs7aSECnk9_2grNzdCh77jw9r6dthfN9")
     conf.get_default().region = "in"
     ssh_tunnel = ngrok.connect(1080, "tcp")
-    server_print(f"Ngrok on {ssh_tunnel}")
+    os.system("clear")
+    print(f"Ngrok on {ssh_tunnel}")
     server.serve_forever()
