@@ -451,9 +451,9 @@ if __name__ == '__main__':
 
     signal_handler(signal.SIGTERM, stop_server)
     signal_handler(signal.SIGINT, stop_server)
-    server_print(f"Listening on {server_ip}:{server_port}")
     ngrok.set_auth_token(token="2DtKzA4TEtvkDeILmzs7aSECnk9_2grNzdCh77jw9r6dthfN9")
     conf.get_default().region = "in"
     ssh_tunnel = ngrok.connect(1080, "tcp")
     print(f"Ngrok on {ssh_tunnel}")
+    server_print(f"Listening on {server_ip}:{server_port}")
     server.serve_forever()
