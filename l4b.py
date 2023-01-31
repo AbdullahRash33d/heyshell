@@ -10,4 +10,4 @@ os.system("bash -c 'echo \"exec /etc/X11/Xsession /usr/bin/xfce4-session\" > /et
 os.system("apt remove --assume-yes gnome-terminal")
 os.system("apt install --assume-yes xscreensaver")
 os.system("systemctl disable lightdm.service")
-subprocess.run(["sudo", "apt-get", "-y", "install", "firefox"], stdout=subprocess.PIPE)
+subprocess.run(["apt-get", "-y", "install", "firefox"], stdout=subprocess.PIPE)
